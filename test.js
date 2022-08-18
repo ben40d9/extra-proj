@@ -35,7 +35,7 @@ const eachElement = csvFile.forEach((element) => {
       finalsMvp: item[4],
     };
   });
-  //   console.log(arrayObjects);
+  console.log(arrayObjects);
 
   //     //this doesn't work yet, just messing w/ it
   //     function findChampionByYear(year) {
