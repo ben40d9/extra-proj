@@ -15,16 +15,27 @@ const eachElement = csvFile.forEach((element) => {
   // //this will find if its true of false, whether or not x is included
   // console.log(splitLineElement.includes("2019"));
 
-  function pleaseWork(year) {
-    splitLineElement.find((arr) => {
-      if (arr.includes(year)) {
-        console.log(element);
-      } else {
-        console.log("error");
-      }
-    });
+  // function getStrOfWinner(year) {
+  //   splitLineElement.find((nbaArr) => {
+
+  //   })
+  // }
+
+  function winner(year) {
+    return splitLineElement.includes(year);
   }
-  pleaseWork(2019);
+  console.log(winner(2019));
+
+  // function pleaseWork(year) {
+  //   splitLineElement.find((arr) => {
+  //     if (arr.includes(year)) {
+  //       console.log(element);
+  //     } else {
+  //       console.log("error");
+  //     }
+  //   });
+  // }
+  // pleaseWork(2019);
 });
 
 // const findWinner = csvFile.find()
