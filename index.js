@@ -5,12 +5,15 @@ const contents = readFileSync(join(__dirname, "nba_finals.csv"), {
 });
 
 const csvFile = contents.split("\r\n");
-console.log(csvFile);
+// console.log(csvFile);
+
+// const splitAgain = csvFile.split(",");
+// console.log(splitAgain);
 
 const eachElement = csvFile.forEach((element) => {
   // console.log(element);
   const splitLineElement = element.split(",");
-  // console.log(splitLineElement);
+  console.log(splitLineElement);
 
   // //this will find if its true of false, whether or not x is included
   // console.log(splitLineElement.includes("2019"));
