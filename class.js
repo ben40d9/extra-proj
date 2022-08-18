@@ -13,9 +13,13 @@ const data = contents.split("\r\n");
 function solution(data) {
   //create empty array
   let arr = [];
+
   //create header, data[0], using the first str in the array(const data)
-  //will use as the keys for every obj in arr
-  let headers = data[0].split(",");
+  //will use as the keys for every obj in arr.
+  //the headers comeback with their first letter capitalized
+  let uppercaseHeaders = data[0].split(",");
+  //changed my variable so that my keys could all be lowerCase
+  const headers = uppercaseHeaders.map((ele) => ele.toLowerCase());
   //   console.log(headers);
 
   //iterate over array and make each element in the array its own array
@@ -32,7 +36,26 @@ function solution(data) {
     arr.push(obj);
   }
   //   console.log(JSON.stringify(arr));
-  console.log(arr);
+  //   console.log(arr);
+
+  //   let found = arr.find((element) => element.year === "1950");
+  //   console.log(found);
+
+  const getChampion = (season) => {
+    const foundObj = arr.find((element) => {
+      const thisIsTheObj = element.year === season;
+    });
+  };
+
+  //finding the winner by year
+  //   function getChampByYear(year) {
+  //     let objFound = arr.find((element) => {
+  //       console.log(element.year === year);
+  //       return element.year === year;
+  //     });
+  //     console.log(getChampByYear(1950));
+  //   }
+
   //   const getWinnerByYear = (year) => {};
 }
 
