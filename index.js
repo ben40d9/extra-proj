@@ -5,7 +5,7 @@ const contents = readFileSync(join(__dirname, "nba_finals.csv"), {
 });
 
 const csvFile = contents.split("\r\n");
-// console.log(csvFile);
+console.log(csvFile);
 
 const eachElement = csvFile.forEach((element) => {
   // console.log(element);
@@ -21,10 +21,10 @@ const eachElement = csvFile.forEach((element) => {
   //   })
   // }
 
-  function winner(year) {
-    return splitLineElement.includes(year);
-  }
-  console.log(winner(2019));
+  // function winner(year) {
+  //   return splitLineElement.includes(year);
+  // }
+  // console.log(winner(2019));
 
   // function pleaseWork(year) {
   //   splitLineElement.find((arr) => {
@@ -46,8 +46,6 @@ const eachElement = csvFile.forEach((element) => {
 // //this creates one obj w ever csv val WRONG
 // const testArrOfObj = { ...csvFile };
 // console.log(testArrOfObj);
-
-// const tryTheMap = data.map()
 
 //know i need to map through array ie, need 'eachString' to equal a single str in the arr:
 //data.map((eachString, index) => {(value: eachString, id: index + 1)})
