@@ -36,7 +36,7 @@ function solution(data) {
     arr.push(obj);
   }
   //   console.log(JSON.stringify(arr));
-  //   console.log(arr);
+  console.log(arr);
 
   //   let found = arr.find((element) => element.year === "1950");
   //   console.log(found);

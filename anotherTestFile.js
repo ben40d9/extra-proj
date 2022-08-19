@@ -5,6 +5,9 @@ const contents = readFileSync(join(__dirname, "nba_finals.csv"), {
 });
 
 const data = contents.split("\r\n");
+// console.log(data);
+
+// can take any year and display the name of champion that year
 
 function solution(data) {
   //create empty array
@@ -21,6 +24,7 @@ function solution(data) {
   //iterate over array and make each element in the array its own array
   for (i = 0; i < data.length; i++) {
     const eachLine = data[i].split(",");
+    // console.log(eachLine);
 
     //create empty obj
     let obj = {};
@@ -30,18 +34,6 @@ function solution(data) {
     }
     arr.push(obj);
   }
-  //   console.log(arr);
-
-  //   let found = arr.find((element) => element.year === "1950");
-  //   console.log(found);
-
-  //finding the winner by year
-  function getChampByYear(year) {
-    let found = arr.find((element) => {
-      console.log(element.year === year);
-    });
-  }
-  console.log(getChampByYear(1950));
+  //   console.log(JSON.stringify(arr));
+  console.log(arr);
 }
-
-solution(data);
