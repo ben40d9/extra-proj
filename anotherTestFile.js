@@ -84,7 +84,8 @@ const arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 //function to get name of finalsMvp in specific year
 const mvpByYear = (year) => {
   const found = arrNoKeyObj.find((obj) => obj.year === `${year}`);
-  console.log(found);
+  return console.log(found.mvp);
 };
 
-console.log(mvpByYear(2010));
+mvpByYear(2010);
+mvpByYear(2012);
