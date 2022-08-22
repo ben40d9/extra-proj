@@ -26,7 +26,7 @@ for (i = 0; i < data.length; i++) {
   let obj = {};
   //iterate through each array & push it to obj var we made
   for (b = 0; b < eachLine.length; b++) {
-    obj[headers[b].trim()] = eachLine[b].trim();
+    obj[headers[b].trim()] = eachLine[b].trim().toLowerCase();
   }
   arrOfObjs.push(obj);
 }
@@ -35,7 +35,7 @@ for (i = 0; i < data.length; i++) {
 
 //takes off the header obj in the arrOfObjs
 //cant figure out how to take out the null/undefined
-const arrNoKeyObj = arrOfObjs.filter((obj) => obj.winner !== "Winner" || null);
+const arrNoKeyObj = arrOfObjs.filter((obj) => obj.winner !== "winner" || null);
 // console.log(arrNoKeyObj);
 
 //function to get name of champion by entering the year
@@ -99,4 +99,20 @@ const finalsMvpOrNot = (name) => {
   return console.log(filtered);
 };
 // console.log(finalsMvpOrNot("kobe bryant"));
-finalsMvpOrNot("Kobe Bryant");
+finalsMvpOrNot("kobe bryant");
+
+//function that takes a teams name and tell all of the years that they have won
+const findTeamsYearsOfWinning = (nameOfTeam) => {
+  let filtered = arrOfObjs.filter((obj) => obj.winner === `${nameOfTeam}`);
+  // console.log(filtered);
+  let arr = [];
+  filtered.forEach((obj) => {
+    console.log(obj.year);
+    //put inside of brackets for an array w string value ||
+    //leave out of brackets for just values
+    arr = [obj.year];
+    // console.log(arr);
+    return arr;
+  });
+};
+findTeamsYearsOfWinning("los angeles lakers");
