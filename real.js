@@ -32,24 +32,10 @@ function solution(data) {
     }
     arr.push(obj);
   }
-  // console.log(arr);
-
-  // let found = arr.find((obj) => obj.year === "1950");
-  // console.log(found.winner);
-
-  // const getChamp = (arr) => {
+  //this is the entire arrOfObjects
   //   console.log(arr);
-  // };
 
-  // // working function to get name of champion by entering the year
-  // function getChampion(year) {
-  //   const found = arr.find((obj) => obj.year === `${year}`);
-  //   // console.log(found);
-  //   return console.log(found.winner);
-  // }
-  // getChampion(1950);
-
-  //trying arrow function
+  //function to get name of champion by entering the year
   const getChampByYear = (year) => {
     const found = arr.find((obj) => obj.year === `${year}`);
     console.log(found);
