@@ -46,6 +46,12 @@ const getChampByYear = (year) => {
 };
 getChampByYear(2010);
 
+//function to get name of finalsMvp in specific year
+const mvpByYear = (year) => {
+  const found = arrNoKeyObj.find((obj) => obj.year === `${year}`);
+  console.log(found);
+};
+
 //function to find the amount of times 'x' team has won the championiship
 function findChampionshipsWon(arr, key) {
   let arr2 = [];
