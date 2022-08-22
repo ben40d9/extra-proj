@@ -34,9 +34,9 @@ let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // console.log(arrNoKeyObj);
 
 // DOES NOT WORK YET splicing the last obj with just a blank year Key
-const removeLastObj = arrNoKeyObj.splice(0, 1);
-console.log(removeLastObj);
-console.log(arrNoKeyObj);
+// const removeLastObj = arrNoKeyObj.splice(0, -1);
+// console.log(removeLastObj);
+// console.log(arrNoKeyObj.splice(0, -1));
 
 //THIS FILE IS FOR TESTING INDIVIDUAL FUNCTIONS IN THE LOG
 //W/O RANDOM SHIT EVERYWHERE IN THE LOG
@@ -94,3 +94,26 @@ console.log(arrNoKeyObj);
 
 // mvpByYear(2010);
 // mvpByYear(2012);
+
+//function => enter players name, will return obj/info on
+//year where he got mvp, if he did get more than one then
+//show all, but if none say so
+const finalsMvpOrNot = (name) => {
+  const filtered = arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
+  return console.log(filtered);
+};
+// console.log(finalsMvpOrNot("kobe bryant"));
+finalsMvpOrNot("kobe bryant");
+finalsMvpOrNot("lebron james");
+
+//NOT WORKING just wanted to test a way to do w/ different methods
+//but now joe gave some functions to make and I am moving
+//on to that
+// const finalsMvpOrNot = (name) => {
+//   if (arrNoKeyObj.find(name)) {
+//     arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
+//   }
+//   return console.log(filtered);
+// };
+// console.log(finalsMvpOrNot("kobe bryant"));
+// finalsMvpOrNot("kobe bryant");
