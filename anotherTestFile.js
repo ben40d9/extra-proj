@@ -98,13 +98,13 @@ let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 //function => enter players name, will return obj/info on
 //year where he got mvp, if he did get more than one then
 //show all, but if none say so
-const finalsMvpOrNot = (name) => {
-  const filtered = arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
-  return console.log(filtered);
-};
-// console.log(finalsMvpOrNot("kobe bryant"));
-finalsMvpOrNot("kobe bryant");
-finalsMvpOrNot("lebron james");
+// const finalsMvpOrNot = (name) => {
+//   const filtered = arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
+//   return console.log(filtered);
+// };
+// // console.log(finalsMvpOrNot("kobe bryant"));
+// finalsMvpOrNot("kobe bryant");
+// finalsMvpOrNot("lebron james");
 
 //NOT WORKING just wanted to test a way to do w/ different methods
 //but now joe gave some functions to make and I am moving
@@ -117,3 +117,5 @@ finalsMvpOrNot("lebron james");
 // };
 // console.log(finalsMvpOrNot("kobe bryant"));
 // finalsMvpOrNot("kobe bryant");
+
+//function that takes a teams name and tell all of the years that they have won
