@@ -31,7 +31,19 @@ for (i = 0; i < data.length; i++) {
 //function to get name of champion by entering the year
 const getChampByYear = (year) => {
   const found = arrOfObjs.find((obj) => obj.year === `${year}`);
-  console.log(found);
+  //   console.log(found);
   return console.log(found.winner);
 };
 getChampByYear(2010);
+
+//function to get the years that a specific team has won
+const getYearsofChampionships = (team) => {
+  console.log(
+    arrOfObjs.forEach((obj) => {
+      console.log(Object.values(obj));
+    })
+  );
+
+  //   const found = arrOfObjs.filter();
+};
+getYearsofChampionships();
