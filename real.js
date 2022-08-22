@@ -32,6 +32,8 @@ function solution(data) {
     }
     arr.push(obj);
   }
+  //this is the entire arrOfObjects
+  //   console.log(arr);
 
   //function to get name of champion by entering the year
   const getChampByYear = (year) => {
