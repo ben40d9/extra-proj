@@ -38,10 +38,10 @@ function solution(data) {
   //function to get name of champion by entering the year
   const getChampByYear = (year) => {
     const found = arr.find((obj) => obj.year === `${year}`);
-    console.log(found);
+    // console.log(found);
     return console.log(found.winner);
   };
-  getChampByYear(2010);
+  // getChampByYear(2010);
 }
-
+console.log(data);
 solution(data);
