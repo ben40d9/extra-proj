@@ -89,7 +89,7 @@ function findChampionshipsWon(arr, key) {
 }
 let arr = arrNoKeyObj;
 let key = "winner";
-console.log(findChampionshipsWon(arr, key));
+// console.log(findChampionshipsWon(arr, key));
 
 //function => enter players name, will return obj/info on
 //year where he got mvp, if he did get more than one then
@@ -99,4 +99,4 @@ const finalsMvpOrNot = (name) => {
   return console.log(filtered);
 };
 // console.log(finalsMvpOrNot("kobe bryant"));
-finalsMvpOrNot("kobe bryant");
+finalsMvpOrNot("Kobe Bryant");

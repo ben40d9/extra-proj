@@ -119,3 +119,53 @@ let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // finalsMvpOrNot("kobe bryant");
 
 //function that takes a teams name and tell all of the years that they have won
+// const teamsYearsOfWinning = (teamName) => {
+//   const filtered = arrNoKeyObj
+//     .filter((obj) => obj.winner === `${teamName}`)
+//     .
+//   return console.log(filtered);
+// };
+// console.log(teamsYearsOfWinning("lakers"));
+
+// const teamYearsWin = (team) => {
+//   if(arrNoKeyObj.includes(team))
+// }
+
+// const teamsYearsOfWinning = (team) => {
+//   team = team.toLowerCase();
+//   // console.log(team);
+//   let yearsWon = arrNoKeyObj
+//     .filter((obj) => obj.winner === `${team}`)
+//     .map((obj) => obj.year);
+//   let eachYear = yearsWon.forEach((year) => [...year]);
+//   console.log(eachYear);
+// };
+
+// teamsYearsOfWinning("lakers");
+// console.log(arrNoKeyObj);
+
+// const wholeThing = (team) => {
+//   let filtered = arrNoKeyObj.filter((obj) => obj.winner === `${team}`);
+//   // return console.log(filtered);
+// };
+// wholeThing("lakers");
+
+// let team = "lakers";
+
+// let yearOfChampionships = arrNoKeyObj
+//   .filter((obj) => {
+//     return obj.winner === "lakers";
+//   })
+//   .map((obj) => {
+//     return obj.year;
+//   });
+// const shit = yearOfChampionships.forEach((obj) => {
+//   console.log(obj);
+// });
+// console.log(shit);
+
+const here = (nameOfTeam) => {
+  let filtered = arrOfObjs.filter((obj) => obj.winner === `${nameOfTeam}`);
+  return console.log(filtered);
+};
+here("Los Angeles Lakers");
