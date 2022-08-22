@@ -30,8 +30,13 @@ for (i = 0; i < data.length; i++) {
 // console.log(arrOfObjs);
 
 //takes off the header obj in the arrOfObjs
-const arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
+let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // console.log(arrNoKeyObj);
+
+// DOES NOT WORK YET splicing the last obj with just a blank year Key
+const removeLastObj = arrNoKeyObj.splice(0, 1);
+console.log(removeLastObj);
+console.log(arrNoKeyObj);
 
 //THIS FILE IS FOR TESTING INDIVIDUAL FUNCTIONS IN THE LOG
 //W/O RANDOM SHIT EVERYWHERE IN THE LOG
@@ -82,10 +87,10 @@ const arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // console.log(findChampionshipsWon(arr, key));
 
 //function to get name of finalsMvp in specific year
-const mvpByYear = (year) => {
-  const found = arrNoKeyObj.find((obj) => obj.year === `${year}`);
-  return console.log(found.mvp);
-};
+// const mvpByYear = (year) => {
+//   const found = arrNoKeyObj.find((obj) => obj.year === `${year}`);
+//   return console.log(found.mvp);
+// };
 
-mvpByYear(2010);
-mvpByYear(2012);
+// mvpByYear(2010);
+// mvpByYear(2012);
