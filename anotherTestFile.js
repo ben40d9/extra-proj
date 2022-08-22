@@ -5,35 +5,78 @@ const contents = readFileSync(join(__dirname, "nba_finals.csv"), {
 });
 
 const data = contents.split("\r\n");
-// console.log(data);
 
-// can take any year and display the name of champion that year
+let arrOfObjs = [];
 
-function solution(data) {
-  //create empty array
-  let arr = [];
+// console.log(data[0]);
 
-  //create header, data[0], using the first str in the array(const data)
-  //will use as the keys for every obj in arr.
-  //the headers comeback with their first letter capitalized
-  let uppercaseHeaders = data[0].split(",");
-  //changed my variable so that my keys could all be lowerCase
-  const headers = uppercaseHeaders.map((ele) => ele.toLowerCase());
-  //   console.log(headers);
+let uppercaseHeaders = data[0].split(",");
 
-  //iterate over array and make each element in the array its own array
-  for (i = 0; i < data.length; i++) {
-    const eachLine = data[i].split(",");
-    // console.log(eachLine);
+const headers = uppercaseHeaders.map((ele) => ele.toLowerCase());
 
-    //create empty obj
-    let obj = {};
-    //iterate through each array & push it to obj var we made
-    for (b = 0; b < eachLine.length; b++) {
-      obj[headers[b].trim()] = eachLine[b].trim();
-    }
-    arr.push(obj);
+for (i = 0; i < data.length; i++) {
+  const eachLine = data[i].split(",");
+  // console.log(eachLine);
+
+  //create empty obj
+  let obj = {};
+  //iterate through each array & push it to obj var we made
+  for (b = 0; b < eachLine.length; b++) {
+    obj[headers[b].trim()] = eachLine[b].trim().toLowerCase();
   }
-  //   console.log(JSON.stringify(arr));
-  console.log(arr);
+  arrOfObjs.push(obj);
 }
+//now the var arr is an arrayOfObjects
+// console.log(arrOfObjs);
+
+//takes off the header obj in the arrOfObjs
+const arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
+// console.log(arrNoKeyObj);
+
+//THIS FILE IS FOR TESTING INDIVIDUAL FUNCTIONS IN THE LOG
+//W/O RANDOM SHIT EVERYWHERE IN THE LOG
+
+//function to get name of champion by entering the year
+const getChampByYear = (year) => {
+  const found = arrOfObjs.find((obj) => obj.year === `${year}`);
+  //   console.log(found);
+  return console.log(found.winner);
+};
+getChampByYear(2010);
+
+//function to find the amount of times 'x' team has won the championiship
+function findChampionshipsWon(arr, key) {
+  let arr2 = [];
+
+  arr.forEach((x) => {
+    // looking to see if any object in arr2,
+    //contains the key value(has the same winner value)
+    if (
+      arr2.some((val) => {
+        return val[key] == x[key];
+      })
+    ) {
+      //then increase the occurrence by 1
+      arr2.forEach((k) => {
+        if (k[key] === x[key]) {
+          //ASK WHY THE SPACE PUTS KEY INTO A STRING
+          // k["times Won"]++;
+          k["timesWon"]++;
+        }
+      });
+    } else {
+      // then create a new object, initialize it with the current
+      //iteration key value and set the timesWon to 1
+      let a = {};
+      a[key] = x[key];
+      // a["times Won"] = 1;
+      a["timesWon"] = 1;
+      arr2.push(a);
+    }
+  });
+
+  return arr2;
+}
+let arr = arrNoKeyObj;
+let key = "winner";
+console.log(findChampionshipsWon(arr, key));
