@@ -33,6 +33,11 @@ for (i = 0; i < data.length; i++) {
 //this is the entire arrOfObjects
 //   console.log(arr);
 
+//takes off the header obj in the arrOfObjs
+//cant figure out how to take out the null/undefined
+const arrNoKeyObj = arrOfObjs.filter((obj) => obj.winner !== "Winner" || null);
+// console.log(arrNoKeyObj);
+
 //function to get name of champion by entering the year
 const getChampByYear = (year) => {
   const found = arrOfObjs.find((obj) => obj.year === `${year}`);
@@ -46,24 +51,24 @@ function findChampionshipsWon(arr, key) {
   let arr2 = [];
 
   arr.forEach((x) => {
-    // Checking if there is any object in arr2
-    // which contains the key value
+    // looking to see if any object in arr2,
+    //contains the key value(has the same winner value)
     if (
       arr2.some((val) => {
         return val[key] == x[key];
       })
     ) {
-      // If yes! then increase the occurrence by 1
+      //then increase the occurrence by 1
       arr2.forEach((k) => {
         if (k[key] === x[key]) {
+          //ASK WHY THE SPACE PUTS KEY INTO A STRING
           // k["times Won"]++;
           k["timesWon"]++;
         }
       });
     } else {
-      // If not! Then create a new object initialize
-      // it with the present iteration key's value and
-      // set the occurrence to 1
+      // then create a new object, initialize it with the current
+      //iteration key value and set the timesWon to 1
       let a = {};
       a[key] = x[key];
       // a["times Won"] = 1;
@@ -74,6 +79,6 @@ function findChampionshipsWon(arr, key) {
 
   return arr2;
 }
-let arr = arrOfObjs;
+let arr = arrNoKeyObj;
 let key = "winner";
 console.log(findChampionshipsWon(arr, key));
