@@ -89,3 +89,13 @@ function findChampionshipsWon(arr, key) {
 let arr = arrNoKeyObj;
 let key = "winner";
 console.log(findChampionshipsWon(arr, key));
+
+//function => enter players name, will return obj/info on
+//year where he got mvp, if he did get more than one then
+//show all, but if none say so(did not finish to if else it)
+const finalsMvpOrNot = (name) => {
+  const filtered = arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
+  return console.log(filtered);
+};
+// console.log(finalsMvpOrNot("kobe bryant"));
+finalsMvpOrNot("kobe bryant");
