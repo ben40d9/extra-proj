@@ -46,6 +46,13 @@ const getChampByYear = (year) => {
 };
 getChampByYear(2010);
 
+//function to get name of finalsMvp in specific year
+const mvpByYear = (year) => {
+  const found = arrNoKeyObj.find((obj) => obj.year === `${year}`);
+  return console.log(found.mvp);
+};
+mvpByYear(2010);
+
 //function to find the amount of times 'x' team has won the championiship
 function findChampionshipsWon(arr, key) {
   let arr2 = [];
@@ -82,3 +89,13 @@ function findChampionshipsWon(arr, key) {
 let arr = arrNoKeyObj;
 let key = "winner";
 console.log(findChampionshipsWon(arr, key));
+
+//function => enter players name, will return obj/info on
+//year where he got mvp, if he did get more than one then
+//show all, but if none say so(did not finish to if else it)
+const finalsMvpOrNot = (name) => {
+  const filtered = arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
+  return console.log(filtered);
+};
+// console.log(finalsMvpOrNot("kobe bryant"));
+finalsMvpOrNot("kobe bryant");

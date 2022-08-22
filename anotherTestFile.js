@@ -30,53 +30,90 @@ for (i = 0; i < data.length; i++) {
 // console.log(arrOfObjs);
 
 //takes off the header obj in the arrOfObjs
-const arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
+let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // console.log(arrNoKeyObj);
+
+// DOES NOT WORK YET splicing the last obj with just a blank year Key
+// const removeLastObj = arrNoKeyObj.splice(0, -1);
+// console.log(removeLastObj);
+// console.log(arrNoKeyObj.splice(0, -1));
 
 //THIS FILE IS FOR TESTING INDIVIDUAL FUNCTIONS IN THE LOG
 //W/O RANDOM SHIT EVERYWHERE IN THE LOG
 
 //function to get name of champion by entering the year
-const getChampByYear = (year) => {
-  const found = arrOfObjs.find((obj) => obj.year === `${year}`);
-  //   console.log(found);
-  return console.log(found.winner);
+// const getChampByYear = (year) => {
+//   const found = arrOfObjs.find((obj) => obj.year === `${year}`);
+//   //   console.log(found);
+//   return console.log(found.winner);
+// };
+// getChampByYear(2010);
+
+// //function to find the amount of times 'x' team has won the championiship
+// function findChampionshipsWon(arr, key) {
+//   let arr2 = [];
+
+//   arr.forEach((x) => {
+//     // looking to see if any object in arr2,
+//     //contains the key value(has the same winner value)
+//     if (
+//       arr2.some((val) => {
+//         return val[key] == x[key];
+//       })
+//     ) {
+//       //then increase the occurrence by 1
+//       arr2.forEach((k) => {
+//         if (k[key] === x[key]) {
+//           //ASK WHY THE SPACE PUTS KEY INTO A STRING
+//           // k["times Won"]++;
+//           k["timesWon"]++;
+//         }
+//       });
+//     } else {
+//       // then create a new object, initialize it with the current
+//       //iteration key value and set the timesWon to 1
+//       let a = {};
+//       a[key] = x[key];
+//       // a["times Won"] = 1;
+//       a["timesWon"] = 1;
+//       arr2.push(a);
+//     }
+//   });
+
+//   return arr2;
+// }
+// let arr = arrNoKeyObj;
+// let key = "winner";
+// console.log(findChampionshipsWon(arr, key));
+
+//function to get name of finalsMvp in specific year
+// const mvpByYear = (year) => {
+//   const found = arrNoKeyObj.find((obj) => obj.year === `${year}`);
+//   return console.log(found.mvp);
+// };
+
+// mvpByYear(2010);
+// mvpByYear(2012);
+
+//function => enter players name, will return obj/info on
+//year where he got mvp, if he did get more than one then
+//show all, but if none say so
+const finalsMvpOrNot = (name) => {
+  const filtered = arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
+  return console.log(filtered);
 };
-getChampByYear(2010);
+// console.log(finalsMvpOrNot("kobe bryant"));
+finalsMvpOrNot("kobe bryant");
+finalsMvpOrNot("lebron james");
 
-//function to find the amount of times 'x' team has won the championiship
-function findChampionshipsWon(arr, key) {
-  let arr2 = [];
-
-  arr.forEach((x) => {
-    // looking to see if any object in arr2,
-    //contains the key value(has the same winner value)
-    if (
-      arr2.some((val) => {
-        return val[key] == x[key];
-      })
-    ) {
-      //then increase the occurrence by 1
-      arr2.forEach((k) => {
-        if (k[key] === x[key]) {
-          //ASK WHY THE SPACE PUTS KEY INTO A STRING
-          // k["times Won"]++;
-          k["timesWon"]++;
-        }
-      });
-    } else {
-      // then create a new object, initialize it with the current
-      //iteration key value and set the timesWon to 1
-      let a = {};
-      a[key] = x[key];
-      // a["times Won"] = 1;
-      a["timesWon"] = 1;
-      arr2.push(a);
-    }
-  });
-
-  return arr2;
-}
-let arr = arrNoKeyObj;
-let key = "winner";
-console.log(findChampionshipsWon(arr, key));
+//NOT WORKING just wanted to test a way to do w/ different methods
+//but now joe gave some functions to make and I am moving
+//on to that
+// const finalsMvpOrNot = (name) => {
+//   if (arrNoKeyObj.find(name)) {
+//     arrNoKeyObj.filter((obj) => obj.mvp === `${name}`);
+//   }
+//   return console.log(filtered);
+// };
+// console.log(finalsMvpOrNot("kobe bryant"));
+// finalsMvpOrNot("kobe bryant");
