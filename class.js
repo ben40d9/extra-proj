@@ -1,6 +1,5 @@
 const { readFileSync } = require("fs");
 const { join } = require("path");
-console.log(__dirname);
 const contents = readFileSync(join(__dirname, "nba_finals.csv"), {
   encoding: "utf-8",
 });
@@ -36,16 +35,23 @@ function solution(data) {
     arr.push(obj);
   }
   //   console.log(JSON.stringify(arr));
-  console.log(arr);
+  // console.log(arr);
 
-  //   let found = arr.find((element) => element.year === "1950");
-  //   console.log(found);
+  // let found = arr.find((obj) => obj.year === "1950");
+  // console.log(found.winner);
 
-  const getChampion = (season) => {
-    const foundObj = arr.find((element) => {
-      const thisIsTheObj = element.year === season;
-    });
+  const getChamp = async (year) => {
+    const found = await arr.find((obj) => obj.year === year);
+    console.log(found);
   };
+  // console.log(getChamp(1950));
+  // getChamp(1950);
+
+  // const getChampion = (season) => {
+  //   const foundObj = arr.find((element) => {
+  //     const thisIsTheObj = element.year === season;
+  //   });
+  // };
 
   //finding the winner by year
   //   function getChampByYear(year) {
