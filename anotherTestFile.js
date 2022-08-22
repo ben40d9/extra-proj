@@ -164,8 +164,17 @@ let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // });
 // console.log(shit);
 
-const here = (nameOfTeam) => {
+const findTeamsYearsOfWinning = (nameOfTeam) => {
   let filtered = arrOfObjs.filter((obj) => obj.winner === `${nameOfTeam}`);
-  return console.log(filtered);
+  // console.log(filtered);
+  let arr = [];
+  filtered.forEach((obj) => {
+    console.log(obj.year);
+    //put inside of brackets for an array w string value ||
+    //leave out of brackets for just values
+    arr = [obj.year];
+    console.log(arr);
+    return arr;
+  });
 };
-here("Los Angeles Lakers");
+findTeamsYearsOfWinning("los angeles lakers");
