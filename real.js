@@ -53,7 +53,8 @@ const mvpByYear = (year) => {
 };
 mvpByYear(2010);
 
-//function to find the amount of times 'x' team has won the championiship
+//function to find the amount of championships for
+// every team that HAS won has won the championiship
 function findChampionshipsWon(arr, key) {
   let arr2 = [];
 
