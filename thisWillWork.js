@@ -4,6 +4,7 @@ const contents = readFileSync(join(__dirname, "nba_finals.csv"), {
   encoding: "utf-8",
 });
 // console.log(contents);
+const data = contents.split("\r\n");
 
 const csvToArr = (str, seperator = ",") => {
   const headers = str.slice(0, str.indexOf("\n")).split(seperator);
