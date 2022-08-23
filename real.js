@@ -88,7 +88,8 @@ function findChampionshipsWon(arr, key) {
   return arr2;
 }
 let arr = arrNoKeyObj;
-let key = "winner";
+// let key = "winner";
+let key = "mvp";
 console.log(findChampionshipsWon(arr, key));
 
 //function => enter players name, will return obj/info on
