@@ -103,6 +103,8 @@ finalsMvpOrNot("kobe bryant");
 
 //function that takes a teams name and tell all of the years that they have won
 const findTeamsYearsOfWinning = (nameOfTeam) => {
+  //change input variable toLowerCase to account for dif capitalization
+  nameOfTeam.toLowerCase();
   let filtered = arrOfObjs.filter((obj) => obj.winner === `${nameOfTeam}`);
   // console.log(filtered);
   let arr = [];
