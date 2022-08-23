@@ -18,14 +18,14 @@ const headers = uppercaseHeaders.map((ele) => ele.toLowerCase());
 //   console.log(headers);
 
 //iterate over array and make each element in the array its own array
-for (i = 0; i < data.length; i++) {
+for (let i = 0; i < data.length; i++) {
   const eachLine = data[i].split(",");
   // console.log(eachLine);
 
   //create empty obj
   let obj = {};
   //iterate through each array & push it to obj var we made
-  for (b = 0; b < eachLine.length; b++) {
+  for (let b = 0; b < eachLine.length; b++) {
     obj[headers[b].trim()] = eachLine[b].trim().toLowerCase();
   }
   arrOfObjs.push(obj);
@@ -103,6 +103,7 @@ const finalsMvpOrNot = (name) => {
 finalsMvpOrNot("kobe bryant");
 
 //function that takes a teams name and tell all of the years that they have won
+//need to err handle for this
 const findTeamsYearsOfWinning = (nameOfTeam) => {
   //change input variable toLowerCase to account for dif capitalization
   nameOfTeam.toLowerCase();
