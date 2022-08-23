@@ -164,17 +164,34 @@ let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // });
 // console.log(shit);
 
-const findTeamsYearsOfWinning = (nameOfTeam) => {
-  let filtered = arrOfObjs.filter((obj) => obj.winner === `${nameOfTeam}`);
-  // console.log(filtered);
-  let arr = [];
-  filtered.forEach((obj) => {
-    console.log(obj.year);
-    //put inside of brackets for an array w string value ||
-    //leave out of brackets for just values
-    arr = [obj.year];
-    console.log(arr);
-    return arr;
-  });
-};
-findTeamsYearsOfWinning("los angeles lakers");
+// const findTeamsYearsOfWinning = (nameOfTeam) => {
+//   let filtered = arrOfObjs.filter((obj) => obj.winner === `${nameOfTeam}`);
+//   // console.log(filtered);
+//   let arr = [];
+//   filtered.forEach((obj) => {
+//     console.log(obj.year);
+//     //put inside of brackets for an array w string value ||
+//     //leave out of brackets for just values
+//     arr = [obj.year];
+//     console.log(arr);
+//     return arr;
+//   });
+// };
+// findTeamsYearsOfWinning("los angeles lakers");
+
+const nbaChamps = arrNoKeyObj.map((obj) => {
+  // console.log(obj.winner);
+});
+const nbaChampLosers = arrNoKeyObj.map((obj) => {
+  // console.log(obj.loser);
+  // const losers = obj.loser;
+  // return losers;
+  console.log(obj.loser);
+});
+const loserOfLoser = nbaChampLosers.map((loser) => loser);
+// let arr = [];
+// const arr2 = [];
+// const winnersArr = arrNoKeyObj.map((obj) => {
+//   obj.winner;
+// });
+// console.log(winnersArr);
