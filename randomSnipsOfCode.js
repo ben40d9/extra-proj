@@ -33,14 +33,3 @@ const reduceResult = arr.reduce((acc, obj) => {
   return { ...acc, [obj.mvp]: (acc[obj.mvp] || 0) + 1 };
 }, {});
 console.log(reduceResult);
-
-const orders = [
-  { id: "1", status: "pending" },
-  { id: "2", status: "pending" },
-  { id: "3", status: "pending" },
-  { id: "4", status: "pending" },
-];
-
-// result = orders.reduce((acc, order) => {
-//   return
-// })
