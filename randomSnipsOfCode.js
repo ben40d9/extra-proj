@@ -28,14 +28,11 @@ for (i = 0; i < data.length; i++) {
 
 //takes off the header obj in the arrOfObjs
 let arrObj = arrOfObjs.filter((obj) => obj.winner !== "winner" || null);
-// console.log(arr);
 
 //take out last weird element
 const lastShitElement = arrObj.pop();
-// console.log(arr);
 
-//testing reduce function that shows each mvp w/
-//times they won finalsMVP shown
+//testing reduce function that shows each mvp w/ times they won finalsMVP shown
 const reduceResult = arrObj.reduce((acc, obj) => {
   return { ...acc, [obj.mvp]: (acc[obj.mvp] || 0) + 1 };
 
@@ -46,6 +43,7 @@ const reduceResult = arrObj.reduce((acc, obj) => {
 // console.log(reduceResult);
 // console.log(Object.values(reduceResult));
 
+//function to loop and list instances of x
 function findChampionshipsWon(arr, key) {
   let arr2 = [];
 
@@ -106,7 +104,6 @@ const threeMvp = moreThanOneMvp.reduce((acc, curr) => {
   }
   return acc;
 }, []);
-console.log(threeMvp);
 
 //variable for players w/ six finals mvps
 const sixMvps = moreThanOneMvp.reduce((acc, curr) => {
@@ -115,7 +112,6 @@ const sixMvps = moreThanOneMvp.reduce((acc, curr) => {
   }
   return acc;
 }, []);
-console.log(sixMvps);
 
 // let mapTry =
 
@@ -136,3 +132,9 @@ console.log(sixMvps);
 //   return mapped;
 // };
 // console.log(mapOut());
+
+//team has lost in finals but never won
+const losersOfLosers = arr.filter((x) => {
+  x.reduce((acc, curr) => {}, {});
+});
+console.log(losersOfLosers);
