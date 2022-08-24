@@ -50,41 +50,41 @@ let arrNoKeyObj = arrOfObjs.filter((obj) => obj.year !== "year" || "");
 // getChampByYear(2010);
 
 //function to find the amount of times 'x' team has won the championiship
-function findChampionshipsWon(arr, key) {
-  let arr2 = [];
+// function findChampionshipsWon(arr, key) {
+//   let arr2 = [];
 
-  arr.forEach((x) => {
-    // looking to see if any object in arr2,
-    //contains the key value(has the same winner value)
-    if (
-      arr2.some((val) => {
-        return val[key] == x[key];
-      })
-    ) {
-      //then increase the occurrence by 1
-      arr2.forEach((k) => {
-        if (k[key] === x[key]) {
-          //ASK WHY THE SPACE PUTS KEY INTO A STRING
-          // k["times Won"]++;
-          k["timesWon"]++;
-        }
-      });
-    } else {
-      // then create a new object, initialize it with the current
-      //iteration key value and set the timesWon to 1
-      let a = {};
-      a[key] = x[key];
-      // a["times Won"] = 1;
-      a["timesWon"] = 1;
-      arr2.push(a);
-    }
-  });
+//   arr.forEach((x) => {
+//     // looking to see if any object in arr2,
+//     //contains the key value(has the same winner value)
+//     if (
+//       arr2.some((val) => {
+//         return val[key] == x[key];
+//       })
+//     ) {
+//       //then increase the occurrence by 1
+//       arr2.forEach((k) => {
+//         if (k[key] === x[key]) {
+//           //ASK WHY THE SPACE PUTS KEY INTO A STRING
+//           // k["times Won"]++;
+//           k["timesWon"]++;
+//         }
+//       });
+//     } else {
+//       // then create a new object, initialize it with the current
+//       //iteration key value and set the timesWon to 1
+//       let a = {};
+//       a[key] = x[key];
+//       // a["times Won"] = 1;
+//       a["timesWon"] = 1;
+//       arr2.push(a);
+//     }
+//   });
 
-  return arr2;
-}
-let arr = arrNoKeyObj;
-let key = "winner";
-console.log(findChampionshipsWon(arr, key));
+//   return arr2;
+// }
+// let arr = arrNoKeyObj;
+// let key = "winner";
+// console.log(findChampionshipsWon(arr, key));
 
 //function to get name of finalsMvp in specific year
 // const mvpByYear = (year) => {
