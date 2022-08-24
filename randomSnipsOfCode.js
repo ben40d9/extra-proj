@@ -27,9 +27,24 @@ for (i = 0; i < data.length; i++) {
 
 //takes off the header obj in the arrOfObjs
 let arr = arrOfObjs.filter((obj) => obj.winner !== "winner" || null);
+
+//take out last weird element
+const lastShitElement = arr.pop();
 // console.log(arr);
 
 const reduceResult = arr.reduce((acc, obj) => {
   return { ...acc, [obj.mvp]: (acc[obj.mvp] || 0) + 1 };
+  //working on trying to make this obj a variable
+  // const result = { ...acc, [obj.mvp]: (acc[obj.mvp] || 0) + 1 };
+  // console.log(result);
 }, {});
-console.log(reduceResult);
+// console.log(reduceResult);
+console.log(Object.values(reduceResult));
+if (Object.values(reduceResult) >= 1) {
+  return;
+}
+
+// const result =
+
+//trying w/ map
+// const mapResult =
