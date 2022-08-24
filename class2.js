@@ -6,6 +6,7 @@ const contents = readFileSync(join("./nba_finals.csv"), {
 
 // setup our data so we can work with it in the function
 const data = contents.split("\r\n");
+console.log(data);
 
 //function that takes a teams name and tell all of the years that they have won
 function solution(arr, team) {
@@ -28,4 +29,4 @@ function solution(arr, team) {
   return years;
 }
 
-console.log(solution(data, "Los Angeles Lakers"));
+// console.log(solution(data, "Los Angeles Lakers"));
