@@ -117,6 +117,8 @@ const sixMvps = moreThanOneMvp.reduce((acc, curr) => {
 }, []);
 console.log(sixMvps);
 
+// let mapTry =
+
 //map out players how you said
 // const mapOut = (moreThanOneMvp) => {
 //   let two = [];
