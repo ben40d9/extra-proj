@@ -92,6 +92,8 @@ let arr = arrNoKeyObj;
 let key = "mvp";
 console.log(findChampionshipsWon(arr, key));
 
+//made a variable that holds the obj of mvpsWon
+
 //function => enter players name, will return obj/info on
 //year where he got mvp, if he did get more than one then
 //show all, but if none say so(did not finish to if else it)
