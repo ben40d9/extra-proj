@@ -18,5 +18,8 @@
   "homepage": "https://github.com/ben40d9/extra-proj#readme",
   "devDependencies": {
     "eslint": "^8.22.0"
+  },
+  "volta": {
+    "node": "16.17.0"
   }
 }
