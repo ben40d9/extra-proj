@@ -138,3 +138,4 @@ const losersOfLosers = arr.filter((x) => {
   x.reduce((acc, curr) => {}, {});
 });
 console.log(losersOfLosers);
+//
