@@ -113,6 +113,13 @@ const sixMvps = moreThanOneMvp.reduce((acc, curr) => {
   return acc;
 }, []);
 
+const groupedListOfMvps = `
+  6 Finals MVP's: ${sixMvps[0]}
+  3 Finals MVP's: ${threeMvp.join(", ")}
+  2 Finals MVP's: ${twoMvp.join(", ")}
+`;
+console.log(groupedListOfMvps);
+
 // let mapTry =
 
 //map out players how you said
@@ -134,8 +141,8 @@ const sixMvps = moreThanOneMvp.reduce((acc, curr) => {
 // console.log(mapOut());
 
 //team has lost in finals but never won
-const losersOfLosers = arr.filter((x) => {
-  x.reduce((acc, curr) => {}, {});
-});
-console.log(losersOfLosers);
+// const losersOfLosers = arr.filter((x) => {
+//   x.reduce((acc, curr) => {}, {});
+// });
+// console.log(losersOfLosers);
 //
