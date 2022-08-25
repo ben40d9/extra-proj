@@ -82,12 +82,13 @@ let arr = arrObj;
 let keyForTeamChampCount = "winner";
 //made a variable that holds the arr of objs w/ championships won
 const numOfChampionships = findChampionshipsWon(arr, keyForTeamChampCount);
-console.log(numOfChampionships);
+// console.log(numOfChampionships);
 
 //set key for var that will hold objs of mvpsWon
 let key = "mvp";
 //made a variable that holds the obj of mvpsWon
 const numOfMvps = findChampionshipsWon(arr, key);
+// console.log(numOfMvps);
 
 //filter for players who have won mvp more than once
 const moreThanOneMvp = numOfMvps.filter((obj) => obj.timesWon >= 2);
@@ -99,7 +100,6 @@ const twoMvp = moreThanOneMvp.reduce((acc, curr) => {
   }
   return acc;
 }, []);
-
 //variable for players w/ three finals mvps
 const threeMvp = moreThanOneMvp.reduce((acc, curr) => {
   if (curr.timesWon === 3) {
@@ -107,7 +107,6 @@ const threeMvp = moreThanOneMvp.reduce((acc, curr) => {
   }
   return acc;
 }, []);
-
 //variable for players w/ six finals mvps
 const sixMvps = moreThanOneMvp.reduce((acc, curr) => {
   if (curr.timesWon === 6) {
