@@ -82,13 +82,13 @@ let arr = arrObj;
 let keyForTeamChampCount = "winner";
 //made a variable that holds the arr of objs w/ championships won
 const numOfChampionships = findChampionshipsWon(arr, keyForTeamChampCount);
-// console.log(numOfChampionships);
+console.log(numOfChampionships);
 
 //set key for var that will hold objs of mvpsWon
 let key = "mvp";
 //made a variable that holds the obj of mvpsWon
 const numOfMvps = findChampionshipsWon(arr, key);
-// console.log(numOfMvps);
+console.log(numOfMvps);
 
 //filter for players who have won mvp more than once
 const moreThanOneMvp = numOfMvps.filter((obj) => obj.timesWon >= 2);
@@ -138,3 +138,26 @@ const mvpByYear = (year) => {
   return console.log(found.mvp);
 };
 mvpByYear(2010);
+
+//function that takes a teams name and tell all of the years that they have won
+function yearsTeamHasWon(arr, team) {
+  // setup an array to put all the matching years in
+  const years = [];
+
+  // loop through the seasons
+  for (let i = 0; i < arr.length; i++) {
+    // "target" is the current pass in the iteration, but also split at ','
+    const target = arr[i].split(",");
+
+    // do nothing unless index 1 (team name) matches the given param,
+    // if so, push the associated year
+    if (target[1] === team) {
+      years.push(target[0]);
+    }
+  }
+
+  // return the array containing all the matching years
+  return years;
+}
+
+console.log(yearsTeamHasWon(data, "Los Angeles Lakers"));
