@@ -121,3 +121,11 @@ const groupedListOfMvps = `
   2 Finals MVP's: ${twoMvp.join(", ")}
 `;
 console.log(groupedListOfMvps);
+
+//function to get name of champion by entering the year
+const getChampByYear = (year) => {
+  const found = arrOfObjs.find((obj) => obj.year === `${year}`);
+  // console.log(found);
+  return console.log(found.winner);
+};
+getChampByYear(2010);
