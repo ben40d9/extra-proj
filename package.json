@@ -1,0 +1,22 @@
+{
+  "name": "extra-proj",
+  "version": "1.0.0",
+  "description": "bens prac repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ben40d9/extra-proj.git"
+  },
+  "author": "Ben Paley <bens@email.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ben40d9/extra-proj/issues"
+  },
+  "homepage": "https://github.com/ben40d9/extra-proj#readme",
+  "devDependencies": {
+    "eslint": "^8.22.0"
+  }
+}
