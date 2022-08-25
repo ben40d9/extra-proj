@@ -20,7 +20,7 @@ for (i = 0; i < data.length; i++) {
   let obj = {};
   //iterate through each array & push it to obj var we made
   for (b = 0; b < eachLine.length; b++) {
-    obj[headers[b].trim()] = eachLine[b].trim().toLowerCase();
+    obj[headers[b].trim()] = eachLine[b].trim();
   }
   arrOfObjs.push(obj);
 }
