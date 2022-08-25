@@ -27,7 +27,7 @@ for (i = 0; i < data.length; i++) {
 //now the var arr is an arrayOfObjects
 
 //takes off the header obj in the arrOfObjs
-let arrObj = arrOfObjs.filter((obj) => obj.winner !== "winner" || null);
+let arrObj = arrOfObjs.filter((obj) => obj.winner !== "Winner" || null);
 
 //take out last weird element
 const lastShitElement = arrObj.pop();
@@ -78,12 +78,15 @@ function findChampionshipsWon(arr, key) {
 }
 let arr = arrObj;
 
-//made a variable that holds the arr of objs w/ championships won
+//set key for var that will hold # of champs pre team
 let keyForTeamChampCount = "winner";
+//made a variable that holds the arr of objs w/ championships won
 const numOfChampionships = findChampionshipsWon(arr, keyForTeamChampCount);
+console.log(numOfChampionships);
 
-//made a variable that holds the obj of mvpsWon
+//set key for var that will hold objs of mvpsWon
 let key = "mvp";
+//made a variable that holds the obj of mvpsWon
 const numOfMvps = findChampionshipsWon(arr, key);
 
 //filter for players who have won mvp more than once
