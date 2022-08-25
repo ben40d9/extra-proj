@@ -124,7 +124,7 @@ console.log(groupedListOfMvps);
 
 //function to get name of champion by entering the year
 const getChampByYear = (year) => {
-  const found = arrOfObjs.find((obj) => obj.year === `${year}`);
+  const found = arrObj.find((obj) => obj.year === `${year}`);
   // console.log(found);
   return console.log(found.winner);
 };
@@ -132,7 +132,7 @@ getChampByYear(2010);
 
 //function to get name of finalsMvp in specific year
 const mvpByYear = (year) => {
-  const found = arrNoKeyObj.find((obj) => obj.year === `${year}`);
+  const found = arrObj.find((obj) => obj.year === `${year}`);
   return console.log(found.mvp);
 };
 mvpByYear(2010);
