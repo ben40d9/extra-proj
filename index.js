@@ -1,54 +1,123 @@
 const { readFileSync } = require("fs");
 const { join } = require("path");
+const { stringify } = require("querystring");
 const contents = readFileSync(join(__dirname, "nba_finals.csv"), {
   encoding: "utf-8",
 });
 
-const csvFile = contents.split("\r\n");
-// console.log(csvFile);
+const data = contents.split("\r\n");
 
-// const splitAgain = csvFile.split(",");
-// console.log(splitAgain);
+let arrOfObjs = [];
 
-const eachElement = csvFile.forEach((element) => {
-  // console.log(element);
-  const splitLineElement = element.split(",");
-  console.log(splitLineElement);
+let uppercaseHeaders = data[0].split(",");
 
-  // //this will find if its true of false, whether or not x is included
-  // console.log(splitLineElement.includes("2019"));
+const headers = uppercaseHeaders.map((ele) => ele.toLowerCase());
 
-  // function getStrOfWinner(year) {
-  //   splitLineElement.find((nbaArr) => {
+for (i = 0; i < data.length; i++) {
+  const eachLine = data[i].split(",");
 
-  //   })
-  // }
+  //create empty obj
+  let obj = {};
+  //iterate through each array & push it to obj var we made
+  for (b = 0; b < eachLine.length; b++) {
+    obj[headers[b].trim()] = eachLine[b].trim().toLowerCase();
+  }
+  arrOfObjs.push(obj);
+}
+//now the var arr is an arrayOfObjects
 
-  // function winner(year) {
-  //   return splitLineElement.includes(year);
-  // }
-  // console.log(winner(2019));
+//takes off the header obj in the arrOfObjs
+let arrObj = arrOfObjs.filter((obj) => obj.winner !== "winner" || null);
 
-  // function pleaseWork(year) {
-  //   splitLineElement.find((arr) => {
-  //     if (arr.includes(year)) {
-  //       console.log(element);
-  //     } else {
-  //       console.log("error");
-  //     }
-  //   });
-  // }
-  // pleaseWork(2019);
-});
+//take out last weird element
+const lastShitElement = arrObj.pop();
 
-// const findWinner = csvFile.find()
+//testing reduce function that shows each mvp w/ times they won finalsMVP shown
+const reduceResult = arrObj.reduce((acc, obj) => {
+  return { ...acc, [obj.mvp]: (acc[obj.mvp] || 0) + 1 };
 
-// const arrOfArr = csvFile.split(",");
-// console.log(arrOfArr);
+  //working on trying to make this obj a variable
+  // const result = { ...acc, [obj.mvp]: (acc[obj.mvp] || 0) + 1 };
+  // console.log(result);
+}, {});
+// console.log(reduceResult);
+// console.log(Object.values(reduceResult));
 
-// //this creates one obj w ever csv val WRONG
-// const testArrOfObj = { ...csvFile };
-// console.log(testArrOfObj);
+//function to loop and list instances of x
+function findChampionshipsWon(arr, key) {
+  let arr2 = [];
 
-//know i need to map through array ie, need 'eachString' to equal a single str in the arr:
-//data.map((eachString, index) => {(value: eachString, id: index + 1)})
+  arr.forEach((x) => {
+    // looking to see if any object in arr2,
+    //contains the key value(has the same winner value)
+    if (
+      arr2.some((val) => {
+        return val[key] == x[key];
+      })
+    ) {
+      //then increase the occurrence by 1
+      arr2.forEach((k) => {
+        if (k[key] === x[key]) {
+          //ASK WHY THE SPACE PUTS KEY INTO A STRING
+          // k["times Won"]++;
+          k["timesWon"]++;
+        }
+      });
+    } else {
+      // then create a new object, initialize it with the current
+      //iteration key value and set the timesWon to 1
+      let a = {};
+      a[key] = x[key];
+      // a["times Won"] = 1;
+      a["timesWon"] = 1;
+      arr2.push(a);
+    }
+  });
+
+  return arr2;
+}
+let arr = arrObj;
+
+//made a variable that holds the arr of objs w/ championships won
+let keyForTeamChampCount = "winner";
+const numOfChampionships = findChampionshipsWon(arr, keyForTeamChampCount);
+
+//made a variable that holds the obj of mvpsWon
+let key = "mvp";
+const numOfMvps = findChampionshipsWon(arr, key);
+
+//filter for players who have won mvp more than once
+const moreThanOneMvp = numOfMvps.filter((obj) => obj.timesWon >= 2);
+
+//variable for players w/ two finals mvps
+const twoMvp = moreThanOneMvp.reduce((acc, curr) => {
+  if (curr.timesWon === 2) {
+    acc.push(curr.mvp);
+  }
+  return acc;
+}, []);
+
+//variable for players w/ three finals mvps
+const threeMvp = moreThanOneMvp.reduce((acc, curr) => {
+  if (curr.timesWon === 3) {
+    acc.push(curr.mvp);
+  }
+  return acc;
+}, []);
+
+//variable for players w/ six finals mvps
+const sixMvps = moreThanOneMvp.reduce((acc, curr) => {
+  if (curr.timesWon === 6) {
+    acc.push(curr.mvp);
+  }
+  return acc;
+}, []);
+
+//this variable shows the list of players who have won finalsMvp more than once,
+//grouped w/ others who won the same amount of times
+const groupedListOfMvps = `
+  6 Finals MVP's: ${sixMvps[0]}
+  3 Finals MVP's: ${threeMvp.join(", ")}
+  2 Finals MVP's: ${twoMvp.join(", ")}
+`;
+console.log(groupedListOfMvps);
