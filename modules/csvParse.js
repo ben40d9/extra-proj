@@ -2,7 +2,7 @@ function getArrFromCsv(filePath) {
   const { readFileSync } = require("fs");
   const { join } = require("path");
   // const { stringify } = require("querystring");
-  const contents = readFileSync(join(__dirname, `../${filePath}`), {
+  const contents = readFileSync(join(__dirname, filePath), {
     encoding: "utf-8",
   });
 
@@ -35,4 +35,4 @@ function getArrFromCsv(filePath) {
 
   return arrObj;
 }
-export { getArrFromCsv };
+exports.getArrFromCsv = getArrFromCsv;
