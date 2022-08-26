@@ -24,7 +24,6 @@ function parseFile(path) {
   console.log(`\nNo parser found for the given filetype: ${filetype}`);
   return;
 }
-parseFile("../../datasets/nba_finals.csv");
 
 // module.exports = {
 //   parseFile

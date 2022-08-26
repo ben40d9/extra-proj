@@ -1,12 +1,12 @@
+const { readFileSync } = require("fs");
+const { join } = require("path");
+
 module.exports = {
   ext: "csv",
-  parse: function (path) {
-    const { readFileSync } = require("fs");
-    const { join } = require("path");
+  parse: function(path) {
     const contents = readFileSync(join(path), {
       encoding: "utf-8",
     });
-    console.log(contents);
 
     const data = contents.split("\r\n");
 
@@ -16,13 +16,13 @@ module.exports = {
 
     const headers = uppercaseHeaders.map((ele) => ele.toLowerCase());
 
-    for (i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       const eachLine = data[i].split(",");
 
       //create empty obj
       let obj = {};
       //iterate through each array & push it to obj var we made
-      for (b = 0; b < eachLine.length; b++) {
+      for (let b = 0; b < eachLine.length; b++) {
         obj[headers[b].trim()] = eachLine[b].trim();
       }
       arrOfObjs.push(obj);
@@ -33,7 +33,7 @@ module.exports = {
     let arrObj = arrOfObjs.filter((obj) => obj.winner !== "Winner" || null);
 
     //take out last weird element
-    const lastShitElement = arrObj.pop();
+    arrObj.pop();
     console.log(arrOfObjs);
     return console.log(arrOfObjs);
   },
