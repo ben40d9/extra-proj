@@ -2,6 +2,7 @@
 // the relvant parser from ./parsers/ if there is a match. otherwise (default case) it will return a soft error.
 
 const parsers = require("./parsers/index");
+
 //logs to see how I can manipulate data
 // console.log(parsers);
 // console.log(Object.keys(parsers));
@@ -25,4 +26,4 @@ function parseFile(path) {
   console.log(`\nNo parser found for the given filetype: ${fileType}`);
   return;
 }
-parseFile("../../datasets/nba_finals.xyz");
+parseFile("../../datasets/nba_finals.csv");
