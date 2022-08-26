@@ -1,4 +1,4 @@
 module.exports = {
-  csv: require('./csv'),
-}
-
+  csv: require("./csv"),
+  json: require("./json"),
+};
