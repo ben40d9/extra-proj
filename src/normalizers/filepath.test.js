@@ -1,9 +1,10 @@
-const { buildAbsoluteTargetPath } = require('./filepath');
+const { buildAbsoluteTargetPath } = require("./filepath");
 
-test('buildAbsoluteTargetPath returns an absolute path', () => {
+test("buildAbsoluteTargetPath returns an absolute path", () => {
   // 1. ARRANGE (set up) your mock data
-
   // 2. ACT - run your function with applicable mock data
-
   // 3. ASSERT - use jest expect() and matchers to confirm function responds as it should.
-})
+  expect(buildAbsoluteTargetPath("nba_finals.csv")).toBe(
+    "/Users/benpaley/playground/extra-proj/datasets/nba_finals.csv"
+  );
+});
