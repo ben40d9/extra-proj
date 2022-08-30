@@ -2,7 +2,7 @@ const { root } = require("../../datasets/root"),
   { parse, join, format } = require("path");
 
 function buildAbsoluteTargetPath(filename) {
-  console.log(root);
+  // console.log(root);
   return join(root, filename);
 }
 
