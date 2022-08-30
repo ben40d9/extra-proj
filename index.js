@@ -12,7 +12,7 @@ console.log(buildAbsoluteTargetPath("nba_finals.csv"));
 const targetPathForNbaCsv = buildAbsoluteTargetPath("nba_finals.csv");
 
 //test that the parseTargetFile will parse our target path
-console.log(parseTargetFilename(targetPathForNbaCsv));
+// console.log(parseTargetFilename(targetPathForNbaCsv));
 
 //check if parse works correctly
-console.log(parse(targetPathForNbaCsv));
+// console.log(parse(targetPathForNbaCsv));
