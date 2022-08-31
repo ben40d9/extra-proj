@@ -1,0 +1,32 @@
+const { pino } = require('pino')
+  , { convict } = require('convict')
+  , { DEFAULTS, DEV, PROD } = require('../helpers');
+
+const _default = config.get('default');
+const _dev = config.get('anything');
+const _user = config.get('user');
+
+// schema
+const config = convict({
+  ..._default,
+  ..._dev,
+  ..._user,
+});
+
+// if (process.env.NODE_ENV === 'production') {
+//   // if in production... 
+// }
+
+// TODO path this coorectly
+config.loadFile('./config/' + env + '.js');
+const hasUserSpecifiedTransport
+  = userTransport => Boolean(userTransport);
+
+function buildConfig() {
+  let mergedConfig = {};
+  if (!hasUserSpecifiedTransport) {
+    // TODO...
+  }
+}
+
+
