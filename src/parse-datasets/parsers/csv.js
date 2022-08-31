@@ -1,27 +1,17 @@
 const { readFileSync } = require("fs");
 const { join } = require("path");
-const { buildAbsoluteTargetPath } = require("../../normalizers/filepath");
+const { root } = require('../../../datasets/root');
 
-// const nbaPath = buildAbsoluteTargetPath("nba_finals.csv");
-// // console.log(nbaPath);
 
-// const contents = readFileSync(nbaPath, {
-//   encoding: "utf-8",
-// });
-// // console.log(contents);
+function parse(path) {
 
-// const data = contents.split("\r\n");
-// console.log(data);
-
-// let arrOfObjs = [];
-
-const parse = function (path) {
-  const contents = readFileSync(join(path), {
+  console.log(thing);
+  const contents = readFileSync(path, {
     encoding: "utf-8",
   });
 
   const data = contents.split("\r\n");
-  console.log(data);
+  // console.log(data);
 
   let arrOfObjs = [];
 
@@ -47,9 +37,9 @@ const parse = function (path) {
 
   //take out last weird element
   arrObj.pop();
-  console.log(arrOfObjs);
-  return console.log(arrOfObjs);
-};
+  // console.log(arrOfObjs);
+  return arrOfObjs;
+}
 
 const ext = "csv";
 
