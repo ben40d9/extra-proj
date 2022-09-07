@@ -11,8 +11,11 @@
 // from .env file: 3. dotenv package (there is a pkg called .env)
 
 const config = require("./config");
+require("dotenv").config();
+console.log(process.env);
+// console.log(config);
 
-const gitEmailEnvironment = config.get("git.email");
-console.log(gitEmailEnvironment);
+// const gitEmailEnvironment = config.get("git.email");
+// console.log(gitEmailEnvironment);
 
 // for .env file since i cant comment: https://github.com/motdotla/dotenv
