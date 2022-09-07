@@ -11,9 +11,25 @@
 // from .env file: 3. dotenv package (there is a pkg called .env)
 
 const config = require("./config");
-require("dotenv").config();
-console.log(process.env);
 // console.log(config);
+
+// const dotenv = require("dotenv");
+
+const pathToTheGlory = require("dotenv").config({
+  path: "/Users/benpaley/.volta/bin/config",
+});
+console.log(pathToTheGlory);
+
+// console.log(process.env);
+
+//parses the contents of your file containing environment variables
+//it accepts a string of buffer and will return an obj w/ the parsed keys and values
+// const buf = Buffer.from("USERNAME:user-name");
+// const objectFromBuf = dotenv.parse(buf);
+// console.log(typeof objectFromBuf, objectFromBuf);
+
+// const pathToFindCreds = process.env.PATH;
+// console.log(pathToFindCreds.get("config user.name"));
 
 // const gitEmailEnvironment = config.get("git.email");
 // console.log(gitEmailEnvironment);
