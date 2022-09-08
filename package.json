@@ -27,9 +27,6 @@
     "node": "16.17.0"
   },
   "dependencies": {
-    "convict": "^6.2.3",
-    "convict-format-with-moment": "^6.2.0",
-    "convict-format-with-validator": "^6.2.0",
     "dotenv": "^16.0.2",
     "inquirer": "^9.1.1",
     "terminal-kit": "^2.8.7"
