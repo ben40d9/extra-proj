@@ -2,7 +2,7 @@
   "name": "extra-proj",
   "version": "1.0.0",
   "description": "bens prac repo",
-  "main": "index.js",
+  "main": "solve.js",
   "scripts": {
     "test": "jest"
   },
@@ -18,9 +18,20 @@
   "homepage": "https://github.com/ben40d9/extra-proj#readme",
   "devDependencies": {
     "eslint": "^8.22.0",
-    "jest": "^29.0.1"
+    "jest": "^29.0.1",
+    "pino": "^8.4.2",
+    "pino-pretty": "^9.1.0",
+    "pino-tee": "^0.3.0"
   },
   "volta": {
     "node": "16.17.0"
+  },
+  "dependencies": {
+    "convict": "^6.2.3",
+    "convict-format-with-moment": "^6.2.0",
+    "convict-format-with-validator": "^6.2.0",
+    "dotenv": "^16.0.2",
+    "inquirer": "^9.1.1",
+    "terminal-kit": "^2.8.7"
   }
 }
